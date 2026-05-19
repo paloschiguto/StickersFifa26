@@ -126,11 +126,6 @@ function bindCheckboxEvents(stickers) {
 
                 try {
 
-                    await updateSticker(
-                        code,
-                        have
-                    );
-
                     const sticker =
                         stickers.find(
                             item =>
@@ -140,6 +135,27 @@ function bindCheckboxEvents(stickers) {
                     if (sticker) {
                         sticker.have = have;
                     }
+
+                    updateProgress(stickers);
+
+                    updateSticker(
+                        code,
+                        have
+                    ).catch(() => {
+
+                        if (sticker) {
+                            sticker.have = !have;
+                        }
+
+                        event.target.checked =
+                            !have;
+
+                        updateProgress(stickers);
+
+                        alert(
+                            "Erro ao salvar figurinha."
+                        );
+                    });
 
                 } finally {
 
