@@ -6,6 +6,7 @@ import {
 } from "./ui.js";
 import { state } from "./state.js";
 import { applyFilters } from "./filters.js";
+import { setupAuth } from "./auth.js";
 
 async function init() {
     showLoading();
@@ -132,4 +133,4 @@ function populateCountries() {
     });
 }
 
-init();
+setupAuth(init);
