@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+        Álbum da Copa 2026
+    </title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-zinc-950 text-white min-h-screen">
+
+    <main class="max-w-7xl mx-auto p-4">
+
+        <!-- HEADER -->
+        <header class="flex flex-col gap-4 mb-6 lg:flex-row lg:items-center lg:justify-between">
+
+            <div>
+
+                <h1 class="text-3xl font-bold">
+                    Álbum da Copa 2026
+                </h1>
+
+                <p class="text-zinc-400">
+                    Controle suas figurinhas
+                </p>
+
+            </div>
+
+            <!-- PROGRESS -->
+            <div class="bg-zinc-900 rounded-2xl px-4 py-3 w-full lg:w-72">
+
+                <div class="flex justify-between mb-2">
+
+                    <span class="text-sm text-zinc-400">
+                        Progresso
+                    </span>
+
+                    <span id="progressText" class="text-sm font-medium">
+                        0/980
+                    </span>
+
+                </div>
+
+                <div class="w-full h-3 bg-zinc-800 rounded-full overflow-hidden">
+
+                    <div id="progressBar" class="h-full bg-green-500 w-0 transition-all duration-300"></div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- FILTERS -->
+        <section class="flex flex-col gap-4 mb-8 lg:flex-row">
+
+            <!-- SEARCH -->
+            <input id="searchInput" type="text" placeholder="Buscar figurinha..."
+                class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 outline-none focus:border-green-500" />
+
+            <!-- GROUP FILTER -->
+            <select id="groupFilter"
+                class="bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 outline-none focus:border-green-500">
+
+                <option value="">
+                    Todos os grupos
+                </option>
+
+                <option value="A">
+                    Grupo A
+                </option>
+
+                <option value="B">
+                    Grupo B
+                </option>
+
+                <option value="C">
+                    Grupo C
+                </option>
+
+                <option value="D">
+                    Grupo D
+                </option>
+
+                <option value="E">
+                    Grupo E
+                </option>
+
+                <option value="F">
+                    Grupo F
+                </option>
+
+                <option value="G">
+                    Grupo G
+                </option>
+
+                <option value="H">
+                    Grupo H
+                </option>
+
+                <option value="I">
+                    Grupo I
+                </option>
+
+                <option value="J">
+                    Grupo J
+                </option>
+
+                <option value="K">
+                    Grupo K
+                </option>
+
+                <option value="L">
+                    Grupo L
+                </option>
+
+            </select>
+            <select id="countryFilter"
+                class="bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 outline-none focus:border-green-500">
+
+                <option value="">
+                    Todos os países
+                </option>
+
+            </select>
+            <!-- STATUS FILTER -->
+            <select id="statusFilter"
+                class="bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 outline-none focus:border-green-500">
+
+                <option value="missing">
+                    Faltando
+                </option>
+
+                <option value="owned">
+                    Tenho
+                </option>
+
+                <option value="all">
+                    Todas
+                </option>
+
+            </select>
+
+        </section>
+
+        <!-- STICKERS -->
+        <section id="stickersContainer" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></section>
+
+    </main>
+
+    <!-- LOADING -->
+    <div id="loadingOverlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
+
+        <div class="flex flex-col items-center gap-4">
+
+            <div class="w-14 h-14 border-4 border-zinc-700 border-t-green-500 rounded-full animate-spin"></div>
+
+            <p class="text-zinc-200 text-sm">
+                Carregando...
+            </p>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+
+</body>
+
+</html>
